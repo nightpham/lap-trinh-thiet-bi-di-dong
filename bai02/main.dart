@@ -1,16 +1,24 @@
     import 'dart:io';
 
-void main() {
-  stdout.write("Nhập số nguyên n: ");
-  int n = int.parse(stdin.readLineSync()!);
+bool isPalindrome(String str) {
+  int length = str.length;
 
-  int sum = 0;
-
-  for (int i = 1; i <= n; i++) {
-    if (i % 3 == 0) {
-      sum += i;
+  for (int i = 0; i < length ~/ 2; i++) {
+    if (str[i] != str[length - 1 - i]) {
+      return false;
     }
   }
 
-  print("Tổng các số chia hết cho 3 từ 1 đến $n là: $sum");
+  return true;
+}
+
+void main() {
+  stdout.write("Nhập chuỗi: ");
+  String str = stdin.readLineSync()!;
+
+  if (isPalindrome(str)) {
+    print("\"$str\" là chuỗi đối xứng.");
+  } else {
+    print("\"$str\" không phải chuỗi đối xứng.");
+  }
 }
