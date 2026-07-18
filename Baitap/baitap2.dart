@@ -1,4 +1,4 @@
-    import 'dart:io';
+  import 'dart:io';
 
 bool isPalindrome(String str) {
   int length = str.length;
